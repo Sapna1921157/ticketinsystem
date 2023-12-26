@@ -16,7 +16,8 @@ export const environment = {
     // login component
     login: API_URL + '/api/v1/users/login/',
   
-   
+     //logout component
+  logOut: API_URL + '/api/v1/users/logOut/',
   
     // change password
     change_passsword: API_URL + '/api/v1/users/change-password/',

@@ -20,6 +20,10 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { RestService } from 'src/app/core/rest.service'; 
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AESEncryptDecryptService } from '../common/aesencrypt-decrypt.service';
+import { minLengthAsyncValidator } from '../common/validator';
 
 @Component({
   selector: 'app-forget-password',
