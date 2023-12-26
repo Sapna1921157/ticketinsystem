@@ -1,0 +1,60 @@
+<div class="main-design text-center">
+    <div class="outboxx">
+      <div class="center-box ">
+        <div class="row text-center mb-2">
+          <div class="col-md-3 mt-2"> <img class="ml-5 mt-1" src="{{assetPath}}/images_and_logos/cdac_logo.png"
+              alt="C-DAC Mohali" height="102px" width="105px"></div>
+          <div class="col-md-9">
+            <img src="{{assetPath}}/images_and_logos/ews.png" alt="C-DAC Mohali" height="80px" width="200px">
+            <br>
+            <b class="namm"> Early Warning System</b>
+          </div>
+        </div>
+        <br>
+        <form [formGroup]="loginForm" #f="ngForm" autocomplete="off" readonly>
+          <div>
+            <input type="text" name="username" autocomplete="one-time-code" autocomplete="off" formControlName="username"
+              placeholder="Enter Username" readonly onfocus="this.removeAttribute('readonly');">
+          </div>
+          <div>
+            <input #id2change1 type="hidden" id="Password" class="mt-4" name="password" formControlName="password"
+              autocomplete="off" >
+            <input #id2change type="password" id="orgPassword" class="mt-4" name="orgPassword" autocomplete="new-password"
+              autocomplete="off" placeholder="Enter Password" formControlName="orgPassword" readonly
+>
+          </div>
+          <br>
+          <div style="transform:scale(0.75); transform-origin:0 0; margin-left: 23%;">
+            <!-- <re-captcha (resolved)="resolved($event)" [siteKey]="siteKey"></re-captcha> -->
+          </div>
+  
+          <button class="btn btn-color cc1" [disabled]="!f.valid" (click)="login()"> Login <i *ngIf="loading"
+              class="fa fa-spinner fa-spin colob"></i></button>
+          <div class="row">
+            <div class="col-md-3">
+  
+              <div class="button-class colo" (click)="signup()">
+                <b> Sign Up </b>
+              </div>
+            </div>
+            <div class="col-md-4"></div> 
+             <div class="col-md-5">
+              <div class="button-class colo mb-1" (click)="forgotPassword()">
+                Forgot password ?
+              </div> 
+  
+            </div>
+          </div>
+        </form>
+  
+        
+  
+      </div>
+    </div>
+  
+    <img class="g20image" src="{{assetPath}}/images_and_logos/emblem.png" alt="C-DAC Mohali" height="130px" width="100px">
+    <img class="g20image" src="{{assetPath}}/images_and_logos/g20.png" alt="C-DAC Mohali" height="150px" width="280px">
+    <img class="g20image" src="{{assetPath}}/images_and_logos/Aazadi.png" alt="C-DAC Mohali" height="110px" width="200px">
+  
+  
+  </div>
