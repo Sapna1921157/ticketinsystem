@@ -1,6 +1,7 @@
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -11,14 +12,18 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { environment } from 'src/environments/environment';
-// import { NO_ERRORS_SCHEMA } from '@angular/compiler';
+import { AuthInterceptor,DEFAULT_TIMEOUT } from './auth/auth.interceptor';
 import { MaterialModule } from './common/material.nodule';
+
 import {
   RECAPTCHA_SETTINGS,
   RecaptchaModule,
   RecaptchaSettings,
 } from 'ng-recaptcha';
 import { RouterModule, Routes } from '@angular/router';
+import { AsyncPipe, CommonModule } from '@angular/common';
+
+
 
 //import { MatErrorMo } from '@angular/material/input';//
 
@@ -39,12 +44,25 @@ import { RouterModule, Routes } from '@angular/router';
     BrowserAnimationsModule,
 RecaptchaModule,
 MaterialModule,
+HttpClientModule,
+FormsModule, 
+MaterialModule,
+CommonModule,
+
      RouterModule,
   ],
 
   
   schemas:[NO_ERRORS_SCHEMA], 
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+      
+    },
+    [{ provide: DEFAULT_TIMEOUT, useValue: 100000 }],
+
     {
       provide: RECAPTCHA_SETTINGS,
       useValue: {
