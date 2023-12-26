@@ -14,10 +14,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { environment } from 'src/environments/environment';
 import { AuthInterceptor,DEFAULT_TIMEOUT } from './auth/auth.interceptor';
 import { MaterialModule } from './common/material.nodule';
-import { ToastrModule, ToastrService } from 'ngx-toastr';
-// import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
-
 
 import {
   RECAPTCHA_SETTINGS,
@@ -26,7 +22,8 @@ import {
 } from 'ng-recaptcha';
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { FooterComponent } from './footer/footer.component'; 
+
+
 
 //import { MatErrorMo } from '@angular/material/input';//
 
