@@ -90,8 +90,7 @@ import { FormControl, FormGroup, Validators,FormBuilder } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { RestService } from '../core/rest.service';
-
+import { RestService } from 'src/app/core/rest.service'; 
 
 @Component({
   selector: 'app-forget-password',
@@ -137,6 +136,8 @@ export class ForgetPasswordComponent implements OnInit {
     this.getUserIp()
   }
   close() {
+    
+    
     this.dialogRef.close("Closed")
   }
 
