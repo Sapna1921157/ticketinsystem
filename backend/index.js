@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+const cors = require('cors');
 const bodyparser = require('body-parser');
 
 const dotenv = require("dotenv");
@@ -8,7 +8,9 @@ dotenv.config("./.env")
 
 const userRouter = require('./src/routes/users.route.js');
 
-
+app.use(cors({
+    origin: ["http://localhost:4200"]
+  }));
 
 app.use(express.json());
 

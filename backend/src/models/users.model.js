@@ -1,5 +1,7 @@
 var dbConn = require('../../config/db.config');
-
+const axios = require('axios');
+const os = require('os');
+const CryptoJS = require("crypto-js");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 // require("dotenv").config();
@@ -270,6 +272,8 @@ Users.addUser = async (req, result) => {
 // verify capcha on server start
 // https://www.google.com/recaptcha/api/siteverify?secret=your_secret&response=response_string&remoteip=user_ip_address
 
+
+//-----------------------------------
 async function fetchcapchaStatus(capcha_res, user_ip) {
 
     return new Promise((resolve, reject) => {
@@ -292,16 +296,16 @@ async function fetchcapchaStatus(capcha_res, user_ip) {
         }, 1);
     });
 
-
-
 }
+//-----------------------------------
+
 // verify capcha on server end
 
 
 // login user
 
 Users.loginUser = async (req, result) => {
-
+    // console.log(req.body);
     let getCapstatus = await fetchcapchaStatus(req.body.capcha_token, req.body.ip);
     if (getCapstatus.data.success != true) {
         return result({
