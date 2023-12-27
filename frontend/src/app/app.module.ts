@@ -36,7 +36,6 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     SignupComponent,
     ForgetPasswordComponent,
     RecoverPasswordComponent,
-    // DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +53,7 @@ CommonModule,
 
      RouterModule,
      ToastrModule,
+     DashboardModule,
   ],
 
   
