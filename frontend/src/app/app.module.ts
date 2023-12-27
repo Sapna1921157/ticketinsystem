@@ -15,6 +15,7 @@ import { environment } from 'src/environments/environment';
 import { AuthInterceptor,DEFAULT_TIMEOUT } from './auth/auth.interceptor';
 import { MaterialModule } from './common/material.nodule';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 
 
 import {
@@ -36,6 +37,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     SignupComponent,
     ForgetPasswordComponent,
     RecoverPasswordComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
