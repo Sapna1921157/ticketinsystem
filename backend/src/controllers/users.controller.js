@@ -25,8 +25,8 @@ exports.createUser = async (req, res) => {
     var loggedUser = [];
     var getSess = [];
     if (req.headers.authorization) {
-        loggedUser = await getLoggedUser(req);
-        getSess = await getLoggedUserSession(loggedUser.dataValues.user_id);
+        // loggedUser = await getLoggedUser(req);
+        // getSess = await getLoggedUserSession(loggedUser.dataValues.user_id);
     }
     const emailExists = await User.findOne({ where: { email: req.body.email } });
     if (emailExists) {
