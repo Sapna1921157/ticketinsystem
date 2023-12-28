@@ -12,7 +12,7 @@ import { SessionstorageService } from '../common/sessionstorage.service';
 import { Subscription } from 'rxjs';
 import { AESEncryptDecryptService } from '../common/aesencrypt-decrypt.service';
 import { minLengthAsyncValidator } from '../common/validator';
-
+import { DashboardModule } from '../modules/dashboard/dashboard.module';
 
 @Component({
   selector: 'app-login',

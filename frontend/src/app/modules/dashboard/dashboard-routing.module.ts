@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { DashboardComponent } from './dashboard.component';
+import { LoginComponent } from 'src/app/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: "dashboard", 
-  pathMatch: "full"
+  { path: '', component:DashboardComponent, 
+
 },
+ {
+  path: 'login', component:LoginComponent,
+ }
 
-{  path: 'header', component:HeaderComponent},
-
-{path: 'footer', component:FooterComponent}
   
 ];
 
