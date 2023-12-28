@@ -1,6 +1,9 @@
 var dbConn = require('../../config/db.config');
 const axios = require('axios');
 const os = require('os');
+
+const { sequelize, DataTypes } = require('../../config/sequelize');
+const User = require('../models/user.model')(sequelize, DataTypes);
 const CryptoJS = require("crypto-js");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -17,6 +20,27 @@ let Users = (user) => {
     create_at = new Date() | any;
     updated_at = new Date() | any;
 }
+
+
+async function getLoggedUser(req) {
+    const token = req.headers.authorization;
+
+    const decoded = jwt.verify(token, config.JWT_PASSWORD_KEY);
+
+    const user = await User.findOne({ where: { username: decoded.data } });
+    return user;
+}
+// get all users
+Users.getAllUsers = (result) => {
+    try {
+        dbConn.query('SELECT * FROM users', (err, res) => {
+            result(null, res);
+        })
+    } catch (err) {
+        return result(null, err);
+    }
+}
+
 
 // create user account
 Users.createUser = async (req, result) => {

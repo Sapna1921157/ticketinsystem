@@ -2,7 +2,8 @@ const dbConn = require('../../config/db.config');
 const UserModel = require('../models/users.model');
 const auth = require("../../middleware/auth");
 const jwt = require('jsonwebtoken');
-
+const { sequelize, DataTypes } = require('../../config/sequelize');
+const User = require('../models/user.model')(sequelize, DataTypes);
 const { validationResult } = require('express-validator');
 
 
@@ -25,8 +26,8 @@ exports.createUser = async (req, res) => {
     var loggedUser = [];
     var getSess = [];
     if (req.headers.authorization) {
-        // loggedUser = await getLoggedUser(req);
-        // getSess = await getLoggedUserSession(loggedUser.dataValues.user_id);
+        loggedUser = await getLoggedUser(req);
+        getSess = await getLoggedUserSession(loggedUser.dataValues.user_id);
     }
     const emailExists = await User.findOne({ where: { email: req.body.email } });
     if (emailExists) {
@@ -62,8 +63,8 @@ exports.addUser = async (req, res) => {
     var loggedUser = [];
     var getSess = [];
     if (req.headers.authorization) {
-        loggedUser = await getLoggedUser(req);
-        getSess = await getLoggedUserSession(loggedUser.dataValues.user_id);
+        // loggedUser = await getLoggedUser(req);
+        // getSess = await getLoggedUserSession(loggedUser.dataValues.user_id);
     }
     const emailExists = await User.findOne({ where: { email: req.body.email } });
     if (emailExists) {
