@@ -10,6 +10,7 @@ import { HeaderModule } from './header/header.module';
 
 @NgModule({
   declarations: [
+    DashbordComponent
     // FooterComponent
     // HeaderComponent
   ],
