@@ -31,8 +31,16 @@ html{
     box-shadow: 0 5px 10px 0 #000000, 0 7px 24px 0 #000000;
 }
 .namm{
-  font-size: 12px !important;
+  font-size: 35px !important;
+  color: #fdb927;
+  position: relative;
+  bottom: -24px;
 }
+#logo{
+   position: relative;
+   right: 35px;
+}
+
 ::ng-deep {
   .gradient-border {
     --b: 1px; /* border thickness */
