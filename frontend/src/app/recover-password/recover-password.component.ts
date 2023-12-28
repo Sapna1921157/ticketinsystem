@@ -122,7 +122,7 @@ else{
     }
    
     this.recoverForm.value.id = this.activateRoute.snapshot.url[1].path
-    let recoverUrl = '/recoverpassword/'+  this.recoverForm.value.id
+    let recoverUrl = '/frontend/src/app/login'+  this.recoverForm.value.id
 
  this.restServ.post(environment.recoverPassword,this.recoverForm.value,{}).subscribe(res=>{  
       if (res.status==1){
