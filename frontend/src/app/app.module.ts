@@ -15,7 +15,8 @@ import { environment } from 'src/environments/environment';
 import { AuthInterceptor,DEFAULT_TIMEOUT } from './auth/auth.interceptor';
 import { MaterialModule } from './common/material.nodule';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
+// import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 
 import {
@@ -25,8 +26,7 @@ import {
 } from 'ng-recaptcha';
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
-
+import { FooterComponent } from './footer/footer.component'; 
 
 //import { MatErrorMo } from '@angular/material/input';//
 
@@ -37,10 +37,12 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     SignupComponent,
     ForgetPasswordComponent,
     RecoverPasswordComponent,
-    DashboardComponent
+    FooterComponent
+    // DashboardComponent
   ],
   imports: [
     BrowserModule,
+    DashboardModule,
     AppRoutingModule,
     ReactiveFormsModule,
     MatInputModule,
@@ -55,7 +57,6 @@ CommonModule,
 
      RouterModule,
      ToastrModule,
-     DashboardModule,
   ],
 
   
