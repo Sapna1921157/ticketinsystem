@@ -89,7 +89,7 @@ showpw:Boolean=true
           this.sessServ.saveToken(res.accessToken);
           this.sessServ.saveSessTime();
           // this.notiService.showSuccess(res.message);
-         this.router.navigate(['/frontend/src/app/modules/dashboard']);
+         this.router.navigate(['/dashboard']);
         }
         else {
           this.loading = false;
