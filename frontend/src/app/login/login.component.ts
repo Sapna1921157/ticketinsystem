@@ -35,7 +35,7 @@ showpw:Boolean=true
 
   constructor(private fb: FormBuilder, private router: Router, public dialog: MatDialog,
     public loginService: LoginService, 
-    // private notiService: NotificationService, 
+    private notiService: NotificationService, 
     private restServ: RestService, 
     private sessServ:SessionstorageService,
     private cryptServ:AESEncryptDecryptService
@@ -72,7 +72,7 @@ showpw:Boolean=true
   login() {
 
     if(!this.captchaStatus || this.captchaStatus == false){
-      // this.notiService.showInfo("Please verify capcha");
+      this.notiService.showInfo("Please verify capcha");
       return  ;
     }
     this.loginSubmitted = true;
@@ -87,12 +87,12 @@ showpw:Boolean=true
           this.sessServ.saveUser(res.user);
           this.sessServ.saveToken(res.accessToken);
           this.sessServ.saveSessTime();
-          // this.notiService.showSuccess(res.message);
+          this.notiService.showSuccess(res.message);
          this.router.navigate(['/dashboard']);
         }
         else {
           this.loading = false;
-          // this.notiService.showError(res.message)
+          this.notiService.showError(res.message)
           this.loginForm.reset()
           document.getElementById("orgPassword")?.setAttribute('type','password');
           document.getElementById("Password")?.setAttribute('type','hidden')
@@ -100,27 +100,27 @@ showpw:Boolean=true
       }
 
     }, error => {
-      // console.log("timeout",error.error.message);
+      console.log("timeout",error.error.message);
       this.loading = false;
       if(error.error.message){
    
         
-        // this.notiService.showError(error.error.message)
+        this.notiService.showError(error.error.message)
       } else if(error.error){
        
             if(typeof(error.error) == 'string'){
-              // this.notiService.showError(error.error);
+              this.notiService.showError(error.error);
               this.loginForm.reset()
               document.getElementById("orgPassword")?.setAttribute('type','password');
               document.getElementById("Password")?.setAttribute('type','hidden')
             } else {
-              // this.notiService.showError("Error in Connecting to Database.");
+              this.notiService.showError("Error in Connecting to Database.");
               this.loginForm.reset()
               document.getElementById("orgPassword")?.setAttribute('type','password');
               document.getElementById("Password")?.setAttribute('type','hidden')
             }
       } else {
-      // this.notiService.showError("Error in Connecting to Database.");
+      this.notiService.showError("Error in Connecting to Database.");
       this.loginForm.reset()
       document.getElementById("orgPassword")?.setAttribute('type','password');
       document.getElementById("Password")?.setAttribute('type','hidden')

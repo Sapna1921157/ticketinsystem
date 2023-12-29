@@ -56,7 +56,10 @@ MaterialModule,
 CommonModule,
 
      RouterModule,
-     ToastrModule,
+     ToastrModule.forRoot({
+      positionClass :'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
 
   
