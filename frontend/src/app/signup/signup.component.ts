@@ -137,7 +137,7 @@ else{
         }
         else {
           // console.log("===", res)
-          this.router.navigate(['/signup'])
+          this.router.navigate(['/login'])
           this.signUpForm.reset();
           document.getElementById("Password")?.setAttribute('type', 'hidden');
           document.getElementById("orgPassword")?.setAttribute('type', 'password');
