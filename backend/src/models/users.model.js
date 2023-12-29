@@ -8,7 +8,8 @@ const User = require('../models/user.model')(sequelize, DataTypes);
 const CryptoJS = require("crypto-js");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-// require("dotenv").config();
+require("dotenv").config();
+const config = process.env;
 
 //
 let Users = (user) => {
@@ -567,5 +568,38 @@ Users.forgotPassword = async (req, result) => {
         }
     }
 }
+
+//Users logOut
+
+Users.logOut = async (req, result) => {
+    var date = new Date();
+    const token = req.headers.authorization || req.headers.token || req.query.authorization || req.headers["x-access-token"];
+    var loggedUser = await getLoggedUser(req);
+    if (token) {
+        try {
+            dbConn.query(`UPDATE users SET token = 'I am not having token' WHERE token = '${token}'`, async function (err, res) {
+
+                await dbConn.query(`UPDATE user_session SET logout_time = '${date}' WHERE user_id = ${loggedUser.dataValues.user_id}  order by id desc limit 1`, function (err, res) {
+
+                });
+                return result(null, {
+                    message: "Logged out successfully!!!"
+                })
+            });
+        } catch (err) {
+            return result(null, {
+                data: err,
+                message: "Something went Wrong"
+            })
+        }
+    }
+    else {
+        return result({
+            data: err,
+            message: "Something went Wrong"
+        }, null)
+    }
+}
+
 
 module.exports = Users;
