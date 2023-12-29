@@ -2,6 +2,7 @@ var dbConn = require('../../config/db.config');
 const axios = require('axios');
 const os = require('os');
 
+const nodemailer = require('nodemailer');
 const { sequelize, DataTypes } = require('../../config/sequelize');
 const User = require('../models/user.model')(sequelize, DataTypes);
 const CryptoJS = require("crypto-js");
@@ -469,6 +470,9 @@ Users.loginUser = async (req, result) => {
     }
 }
 
+function otpDestroy(user_id) {
+    dbConn.query(`UPDATE users SET otp = NULL WHERE user_id = '${user_id}'`)
+}
 
 // Forgot password
 Users.forgotPassword = async (req, result) => {
