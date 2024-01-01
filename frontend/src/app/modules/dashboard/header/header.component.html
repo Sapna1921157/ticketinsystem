@@ -10,22 +10,24 @@
         
       </div>
       <div>
+        <a href="/users">Users</a>
         <a href="@">Login in as admin</a>
         <a href="@">My account</a>
         <div (click)="signout()" class="signout">Sign out</div>
   
       </div>
     </nav>
+    <nav class="navbar">
+      <h1>Ticketing System</h1>
+              <label name="search">Search : </label>
+              <input type="search" >
+              <input list="search" placeholder="Jump to a Project" />
+              <datalist id="search">
+                  <option value="PAE">
+                  <option value="EWS">
+                  </datalist>
+          </nav>
 </header>
-<nav class="navbar">
-  <h1>Ticketing System</h1>
-          <label name="search">Search : </label>
-          <input type="search" >
-          <input list="search" placeholder="Jump to a Project" />
-          <datalist id="search">
-              <option value="PAE">
-              <option value="EWS">
-              </datalist>
-      </nav>
+
    
 

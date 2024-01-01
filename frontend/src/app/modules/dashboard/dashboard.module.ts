@@ -34,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSortModule,
     MatFormFieldModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
 
   ]
 })
