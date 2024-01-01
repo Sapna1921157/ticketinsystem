@@ -155,3 +155,119 @@ exports.logOut = ((req, res) => {
         }
     })
 })
+
+
+// view users
+exports.viewUsers = (async (req, res) => {
+
+    let user = await User.findAll({
+        include: [
+            { model: Node_id, attributes: ['user_id', 'node_id'] }
+        ], where: { user_status: { $not: 'deleted_user' } }
+    });
+
+    res.send({ data: user });
+
+})
+
+
+// view Pending users
+exports.viewPendingUsers = (async (req, res) => {
+    let user = await User.findAll({
+        include: [
+            { model: Node_id, attributes: ['user_id', 'node_id'] }
+        ], where: { user_status: 'inactive' }
+    });
+
+    res.send({ data: user });
+})
+
+// Edit users
+exports.editUser = (async (req, res) => {
+    var loggedUser = [];
+    var getSess = [];
+    if (req.headers.authorization) {
+        loggedUser = await getLoggedUser(req);
+        getSess = await getLoggedUserSession(loggedUser.dataValues.user_id);
+    }
+    let {
+        name,
+        username,
+        email,
+        role,
+        user_status,
+        user_id
+    } = req.body.data
+
+    let reg = new RegExp("^[a-zA-Z0-9 ]+$")
+    let emailReg = new RegExp("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")
+     
+    if(!reg.test(name) || !reg.test(username) || !emailReg.test(email)){
+        return res.status(400).send({
+            status: 0,
+            message: 'Invalid Pattern'
+        })
+    }
+
+    if (user_status == 'active') {
+        // notificationsCntrl.updateUserNotifications(user_id);
+    }
+    let edit = await User.update({ name: name, username: username, email: email, role: role, user_status: user_status }, {
+        where: {
+            user_id: user_id
+        }
+    });
+    if (!edit) {
+        return res.status(400).send({
+            status: 0,
+            message: 'Error in update'
+        })
+    } else {
+        if (req.headers.authorization) {
+            let start_date = new Date();
+            // let userlog = userSessionLogs.create({ alterredUser: user_id, datetime: start_date.toString(), user_session_id: getSess[0].id, action: "User Edited", createdBy: loggedUser.dataValues.user_id });
+        }
+        return res.status(200).send({
+            status: 1,
+            message: "User Updated Successfully!!",
+        })
+    }
+})
+
+//Delete users
+exports.deleteUser = (async (req, res) => {
+    var loggedUser = [];
+    var getSess = [];
+    if (req.headers.authorization) {
+        loggedUser = await getLoggedUser(req);
+        getSess = await getLoggedUserSession(loggedUser.dataValues.user_id);
+    }
+    let {
+        name,
+        username,
+        email,
+        role,
+        user_status,
+        user_id
+    } = req.body.data
+    let remove = await User.update({ user_status: "deleted_user" }, {
+        where: {
+            user_id: user_id
+        }
+    });
+    if (!remove) {
+        return res.status(400).send({
+            status : 0,
+            details: 'Error in delete'
+        })
+    } else {
+        if (req.headers.authorization) {
+            let start_date = new Date();
+            // let userlog = userSessionLogs.create({ alterredUser: user_id, datetime: start_date.toString(), user_session_id: getSess[0].id, action: "User Deleted", createdBy: loggedUser.dataValues.user_id });
+        }
+        return res.status(200).send({
+            status : 1,
+            message: "User Deleted Successfully!!",
+        })
+    }
+})
