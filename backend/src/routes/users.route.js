@@ -28,4 +28,37 @@ router.post('/recoverPassword', usersController.recoverPassword);
 // logout API
 router.get('/logOut', auth.verifyToken, usersController.logOut);
 
+// view users
+router.get(
+  "/viewUsers",
+  auth.verifyToken,
+  roleMiddleware.checkForbiddenRoles(["user"]),
+  usersController.viewUsers
+);
+
+// view Pending users
+router.get(
+  "/viewPendingUsers",
+  auth.verifyToken,
+  roleMiddleware.checkForbiddenRoles(["user"]),
+  usersController.viewPendingUsers
+);
+
+// Edit user
+router.post(
+  "/editUser",
+  auth.verifyToken,
+  roleMiddleware.checkForbiddenRoles(["user"]),
+  usersController.editUser
+);
+
+// Delete user
+router.post(
+  "/deleteUser",
+  auth.verifyToken,
+  roleMiddleware.checkForbiddenRoles(["user"]),
+  usersController.deleteUser
+);
+
+
 module.exports = router;
