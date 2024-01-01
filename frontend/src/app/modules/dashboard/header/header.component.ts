@@ -14,12 +14,12 @@ import { SessionstorageService } from 'src/app/common/sessionstorage.service';
 export class HeaderComponent {
   // router: any;
 
-
+  currentComponent: any;
   getLogoutData!: Subscription
 
   logoutCheck: Boolean = false
 
-  constructor(private route:Router,
+  constructor(private router:Router,
     
     private restServ: RestService,
     private sessServ: SessionstorageService,
@@ -47,8 +47,12 @@ export class HeaderComponent {
   }
   
   
-  navgation(link:any){
-    this.route.navigate([`/${link}`])
+  // navgation(link:any){
+  //   this.route.navigate([`/${link}`])
+  // }
+  navigation(path?: any) {
+    this.router.navigate([`/dashboard/${path}`])
   }
+
 }
 
