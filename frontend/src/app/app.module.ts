@@ -17,6 +17,8 @@ import { MaterialModule } from './common/material.nodule';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 // import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 import {
@@ -27,6 +29,7 @@ import {
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component'; 
+import { MatSortModule } from '@angular/material/sort';
 
 //import { MatErrorMo } from '@angular/material/input';//
 
@@ -54,12 +57,18 @@ HttpClientModule,
 FormsModule, 
 MaterialModule,
 CommonModule,
-
+MatTableModule,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatSortModule,
      RouterModule,
      ToastrModule.forRoot({
       positionClass :'toast-top-right',
       preventDuplicates: true,
     }),
+
+    
+
   ],
 
   
