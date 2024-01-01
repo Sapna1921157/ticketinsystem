@@ -26,7 +26,7 @@ import {
 } from 'ng-recaptcha';
 import { RouterModule, Routes } from '@angular/router';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { FooterComponent } from './footer/footer.component'; 
+import { FooterComponent } from './footer/footer.component';
 
 //import { MatErrorMo } from '@angular/material/input';//
 
@@ -37,7 +37,8 @@ import { FooterComponent } from './footer/footer.component';
     SignupComponent,
     ForgetPasswordComponent,
     RecoverPasswordComponent,
-    FooterComponent
+    FooterComponent,
+    
     // DashboardComponent
   ],
   imports: [

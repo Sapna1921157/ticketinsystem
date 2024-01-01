@@ -12,7 +12,8 @@ import { SessionstorageService } from 'src/app/common/sessionstorage.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  router: any;
+  // router: any;
+
 
   getLogoutData!: Subscription
 
@@ -29,7 +30,8 @@ export class HeaderComponent {
   //   this.route.navigate(['/login'])
   // }
 
-  signout() {
+  signout() 
+  {
     this.logoutCheck = true
     let url = environment.logOut;
     this.restServ.getnew(url, {}, {}).subscribe(res => {
@@ -42,6 +44,11 @@ export class HeaderComponent {
   
     );
   
+  }
+  
+  
+  navgation(link:any){
+    this.route.navigate([`/${link}`])
   }
 }
 

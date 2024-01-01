@@ -1,31 +1,30 @@
-<header>
-    <nav>
-    <div>
-        <a href="#"><i class="fas fa-home" style="color:#fdb927"></i> Home</a>
-        <a href="#"><i class="fas fa-user" style="color:#fdb927"></i> My Page</a>
-        <a href="#"><i class="fas fa-project-diagram" style="color:#fdb927"></i> Projects</a>
-        <a href="#"><i class="fas fa-tools" style="color:#fdb927"></i> Administration</a>
-        <a href="#"><i class="fas fa-question-circle" style="color:#fdb927"></i>Help</a>
-  
-        
+
+      <header>
+        <nav>
+        <div>
+            <a href="/dashbord" (click)="navgation('dashbord')"><i class="fas fa-home icon" style="padding:  2px;" ></i>Home</a>
+            <a href="#"><i class="fas fa-user" style="padding:  2px;"  ></i> My Page</a>
+            <a href="/projects" (click)="navgation('projects')"><i class="fas fa-project-diagram" style="padding:  2px;" ></i> Projects</a>
+            <a href="#"><i class="fas fa-tools" style="padding:  2px;"  ></i> Administration</a>
+            <a href="#"><i class="fas fa-question-circle" style="padding:  2px;"  ></i>Help</a>
       </div>
       <div>
-        <a href="@">Login in as admin</a>
-        <a href="@">My account</a>
-        <div (click)="signout()" class="signout">Sign out</div>
-  
-      </div>
-    </nav>
-</header>
-<nav class="navbar">
-  <h1>Ticketing System</h1>
-          <label name="search">Search : </label>
-          <input type="search" >
-          <input list="search" placeholder="Jump to a Project" />
-          <datalist id="search">
-              <option value="PAE">
-              <option value="EWS">
-              </datalist>
-      </nav>
-   
+            <a href="@">Login in as admin</a>
+            <a href="@">My account</a>
+            <a href="@">Sign out</a>
+      
+          </div>
+        </nav>
+    </header><hr style="background-color: #fff; border:2px #fff;">
+    <nav class="navbar">
+    <img src="../../../../assets/images_and_logos/finallogo.png" class="logos">
+      <h1>Ticketing System</h1>
+              <label name="search">Search : </label>
+              <input type="search" >
+              <input list="search" placeholder="Jump to a Project" />
+              <datalist id="search">
+                  <option value="PAE">
+                  <option value="EWS">
+                  </datalist>
+          </nav>
 
