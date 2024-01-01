@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashbordComponent } from './dashboard.component';
 import { HeaderModule } from './header/header.module';
+import { MapComponent } from './map/map.component';
 // import { HeaderComponent } from './header/header.component';
 // import { FooterComponent } from 'src/app/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    DashbordComponent
+    DashbordComponent,
+    MapComponent
     // FooterComponent
     // HeaderComponent
   ],

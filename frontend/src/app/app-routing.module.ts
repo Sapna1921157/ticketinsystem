@@ -9,9 +9,11 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
-    path: '', redirectTo: "dashboard",
+    path:'', redirectTo: "login",
     pathMatch: "full"
-  }, { path: 'recoverpassword/:{id} ', component: RecoverPasswordComponent },
+  },
+    
+  { path: 'recoverpassword/:{id} ', component: RecoverPasswordComponent },
   {
     path: "dashboard",
     loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
