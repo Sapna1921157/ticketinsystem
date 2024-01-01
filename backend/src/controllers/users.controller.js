@@ -6,7 +6,15 @@ const { sequelize, DataTypes } = require('../../config/sequelize');
 const User = require('../models/user.model')(sequelize, DataTypes);
 const { validationResult } = require('express-validator');
 
+const Node_id = require("../models/node_id.model")(sequelize, DataTypes);
 
+Node_id.hasOne(User, {
+    foreignKey: "user_id",
+  });
+  User.hasMany(Node_id, {
+    foreignKey: "user_id",
+  });
+  
 
 // create new user
 exports.createUser = async (req, res) => {
