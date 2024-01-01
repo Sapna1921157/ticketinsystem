@@ -40,7 +40,8 @@ import { MatSortModule } from '@angular/material/sort';
     SignupComponent,
     ForgetPasswordComponent,
     RecoverPasswordComponent,
-    FooterComponent
+    FooterComponent,
+    
     // DashboardComponent
   ],
   imports: [

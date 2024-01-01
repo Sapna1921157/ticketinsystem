@@ -1,0 +1,27 @@
+*{
+    font-family:sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.tab-menu 
+{
+    background-color: #0c0e16;
+    padding-top: 10px;
+}
+
+
+.tab-button {
+    padding: 10px;
+    border-right: 1px solid white;
+    cursor: pointer;
+    color:#ffff;
+    font-size: 12px;
+    background-color: #0c0e16;
+    transition: border 0.3s ease-in-out;
+}
+
+.tab-button:hover {
+    border: 1px solid #fdb927;
+    color: #fdb927;
+}
+

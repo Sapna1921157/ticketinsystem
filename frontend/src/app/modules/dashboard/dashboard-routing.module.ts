@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashbordComponent } from './dashboard.component';
 import { LoginComponent } from 'src/app/login/login.component';
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
-
+import { ProjectsComponent } from './projects/projects.component';
 const routes: Routes = [
   
   { 
@@ -12,7 +12,9 @@ const routes: Routes = [
   { 
     path: 'users', component:UsermanagementComponent, 
   },
-   
+   {
+     path :'projects', component: ProjectsComponent,
+    }
 ];
 
 @NgModule({
