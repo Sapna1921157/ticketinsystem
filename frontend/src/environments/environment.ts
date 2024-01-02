@@ -50,9 +50,8 @@ export const environment = {
   // logAlertCVE : API_URL+'/api/v1/users/logAlertCVE',
 
   //dashboard
-
-//   // alert log
-//   alertLog : API_URL+'/dash/alertLog',
+// alert log
+  alertLog : API_URL+'/dash/alertLog',
 
   
 

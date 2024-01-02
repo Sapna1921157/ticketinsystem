@@ -9,7 +9,7 @@ import { RecoverPasswordComponent } from './recover-password/recover-password.co
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
-    path:'', redirectTo: "login",
+    path:'', redirectTo: "dashboard",
     pathMatch: "full"
   },
     

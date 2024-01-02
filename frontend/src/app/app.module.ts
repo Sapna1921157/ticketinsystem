@@ -16,7 +16,7 @@ import { AuthInterceptor,DEFAULT_TIMEOUT } from './auth/auth.interceptor';
 import { MaterialModule } from './common/material.nodule';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 // import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
+// import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
@@ -30,6 +30,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component'; 
 import { MatSortModule } from '@angular/material/sort';
+import { ProfileComponent } from './profile/profile.component';
+import { ChangepasswordComponent } from './modules/share/changepassword/changepassword.component';
+import { UsermanagementComponent } from './modules/dashboard/usermanagement/usermanagement.component';
 
 //import { MatErrorMo } from '@angular/material/input';//
 
@@ -41,12 +44,15 @@ import { MatSortModule } from '@angular/material/sort';
     ForgetPasswordComponent,
     RecoverPasswordComponent,
     FooterComponent,
+    ProfileComponent,
+    UsermanagementComponent,
+    ChangepasswordComponent,
     
     // DashboardComponent
   ],
   imports: [
     BrowserModule,
-    DashboardModule,
+    // DashboardModule,
     AppRoutingModule,
     ReactiveFormsModule,
     MatInputModule,

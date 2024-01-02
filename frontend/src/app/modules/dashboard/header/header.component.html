@@ -1,95 +1,102 @@
-<!-- 
-      <header>
-        <nav>
-        <div>
-            <a href="/dashbord" (click)="navgation('dashbord')"><i class="fas fa-home icon" style="padding:  2px;" ></i>Home</a>
-            <a href="#"><i class="fas fa-user" style="padding:  2px;"  ></i> My Page</a>
-            <a href="/projects" (click)="navgation('projects')"><i class="fas fa-project-diagram" style="padding:  2px;" ></i> Projects</a>
-            <a href="#"><i class="fas fa-tools" style="padding:  2px;"  ></i> Administration</a>
-            <a href="#"><i class="fas fa-question-circle" style="padding:  2px;"  ></i>Help</a>
-      </div>
-      <div>
-        <a href="/users">Users</a>
-        <a href="@">Login in as admin</a>
-        <a href="@">My account</a>
-        <div (click)="signout()" class="signout">Sign out</div>
+<nav class="navbar navbar-expand-lg navbar-dark  headerTheme nav1" >
+  <div class="container-fluid">
+    <span class="navbar-brand nav-link" >
+      <img width="80px" height="70px" src="assets\images_and_logos\finallogo.png" alt="finallogo">
+      <b>Ticketing System</b>
+    </span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item">
+            <a class="nav-link active" role="button" data-toggle="dropdown" href="/dashboard" aria-haspopup="true"
+              aria-expanded="false" [ngClass]="{'nav-item-active': (( currentComponent  === 'dashboard') )}"
+              (click)="navigation('dashboard')">
+              <i class="fas fa-home " style="padding:2px; color: #fdb927 " aria-hidden="true" ></i>Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-user" style="padding:2px; color: #fdb927;" aria-hidden="true" ></i> My Page
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-project-diagram" style="padding:2px; color: #fdb927;" aria-hidden="true" ></i> Projects
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  role="button" data-toggle="dropdown"
+            href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+            [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+            <i class="fas fa-tools" style=" color: #fdb927;padding: 2px;"   aria-hidden="true" ></i> Administration
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  role="button" data-toggle="dropdown"
+            href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+            [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+            <i class="fas fa-question-circle" style="color: #fdb927;
+            padding: 2px;" aria-hidden="true"></i> Help
+        </a>
+        </li>
+        <ul id="search1">
+          <label name="search">Search : </label>
+          <input type="search" class="search">
+          <input list="search" placeholder="Jump to a Project" class="search" />
+          <datalist id="search">
+             
+              </datalist>
+        </ul>
+        
+      </ul>
+      <ul class="navbar-nav mr-right">
+        <li class="nav-item active">
+
+        </li>
+        <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown"
+                [ngClass]="{'nav-item-active': ((currentComponent  == 'usermanagement')  || (currentComponent  == 'profile') )}"
+                aria-haspopup="true" aria-expanded="false">
+                {{ username }}
+
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" [ngClass]="{'nav-item-active': currentComponent  == 'profile'}"
+                    (click)="profile()"><i class="fa fa-user icon-col"></i>&nbsp; Profile</a>
+                <div *ngIf="userType != 'user' " class="dropdown-divider"></div>
+                <a *ngIf="userType != 'user' " class="dropdown-item"
+                    [ngClass]="{'nav-item-active': currentComponent  == 'usermanagement'}"
+                    (click)="navigation('usermanagement')" href="dashboard/usermanagement"><i
+                        class="fa fa-users icon-col"></i>&nbsp; Users</a>
+
+                <div *ngIf="userType != 'user' " class="dropdown-divider"></div>
+
+                <a class="dropdown-item" (click)="changePassword()"><i class="fa fa-unlock-alt icon-col"></i>&nbsp;
+                    Change
+                    Password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out icon-col"></i>&nbsp; Logout</a>
+
+            </div>
+        </li>
+    </ul>
+
+
+   
   
-      </div>
-    </nav>
-    <nav class="navbar">
-      <h1>Ticketing System</h1>
-              <label name="search">Search : </label>
-              <input type="search" >
-              <input list="search" placeholder="Jump to a Project" />
-              <datalist id="search">
-                  <option value="PAE">
-                  <option value="EWS">
-                  </datalist>
-          </nav>
-</header>
 
-   
-
-                              <li class="nav-item">
-                                <!-- <a class="nav-link active"  role="button" data-toggle="dropdown"
-                                    href="/dashboard/dashboard" aria-haspopup="true" aria-expanded="false"
-                                    [ngClass]="{'nav-item-active': (( currentComponent  === 'dashboard') )}" (click)="navigation('dashboard')">
-                
-                                    <i class="fa fa-list-alt colo1" aria-hidden="true"></i> Clusters
-                                </a> -->
-                                </li>
-                                <li class="nav-item">
-                                  
-                                  
-                                  </li>
-                                  <li class="nav-item">
-                                    <!-- <a class="nav-link active"  role="button" data-toggle="dropdown"
-                                        href="/dashboard/dashboard" aria-haspopup="true" aria-expanded="false"
-                                        [ngClass]="{'nav-item-active': (( currentComponent  === 'dashboard') )}" (click)="navigation('dashboard')">
-                    
-                                        <i class="fa fa-list-alt colo1" aria-hidden="true"></i> Clusters
-                                    </a> -->
-                                    </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link active"  role="button" data-toggle="dropdown"
-                                          href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
-                                          [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
-                      
-                                          <i class="fas fa-tools" style=" color:orange  2px;"   aria-hidden="true" ></i> Administration
-                                        
-                                      </a>
-                                      </li><li class="nav-item">
-                                        <!-- <a class="nav-link active"  role="button" data-toggle="dropdown"
-                                            href="/dashboard/dashboard" aria-haspopup="true" aria-expanded="false"
-                                            [ngClass]="{'nav-item-active': (( currentComponent  === 'dashboard') )}" (click)="navigation('dashboard')">
-                        
-                                            <i class="fa fa-list-alt colo1" aria-hidden="true"></i> Clusters
-                                        </a> -->
-                                        </li>
-                                        <li class="nav-item">
-                                          <a class="nav-link active"  role="button" data-toggle="dropdown"
-                                              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
-                                              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
-                          
-                                              <i class="fas fa-question-circle" style=" color:orange;padding: 2px;" aria-hidden="true"  ></i> Help
-                                            
-                                          </a>
-                                          </li>
-                                          <li class="nav-item">
-                                            
-            <a href="@">Login in as admin</a>
-            <a href="@">My account</a>
-            <a href="@">Sign out</a>
-                                            </li>
-              
-</ul>
-   
-      <!-- Logout Button -->
-   
-     <!-- <p  style=" color:white !important; margin-right:-20px;padding-right:10px; margin-top:5px; border-right: 2px solid #002245;">
-      <strong ><a routerLink="/jibran">jibran</a></strong>
-    </p>  -->
-    <!-- <div class="justify-content-end">
+<!-- Logout Button
+<p style=" color:white !important; margin-right:-20px;padding-right:10px; margin-top:5px; border-right: 2px solid #002245;">
+    <strong ><a routerLink="/jibran">jibran</a></strong>
+    </p> 
+    <div class="justify-content-end">
       <ul>
         <li class="nav-item ml-auto list-unstyled">
           <a class="nav-link text-white"><strong>Logout</strong></a>

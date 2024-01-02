@@ -3,11 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects/projects.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashbordComponent } from './dashboard.component';
-import { HeaderModule } from './header/header.module';
+// import { HeaderModule } from './header/header.module';
 import { MapComponent } from './map/map.component';
 import { AddUserComponent } from './add-user/add-user.component';
-import { UsermanagementComponent } from './usermanagement/usermanagement.component';
-// import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './header/header.component';
 // import { FooterComponent } from 'src/app/footer/footer.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
@@ -18,17 +17,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
+    HeaderComponent,
     DashbordComponent,
     MapComponent,
     AddUserComponent,
-    UsermanagementComponent
+    ProjectsComponent,
+    
     // FooterComponent
-    // HeaderComponent
+    
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    HeaderModule,
+    // HeaderModule,
     MatPaginatorModule,
     MatTableModule,
     MatSortModule,

@@ -7,14 +7,15 @@ import { ProjectsComponent } from './projects/projects.component';
 const routes: Routes = [
   
   { 
-    path: 'dashboard', component:DashbordComponent, 
+    path: '', component:DashbordComponent, 
   },
-  { 
-    path: 'users', component:UsermanagementComponent, 
-  },
+ 
    {
      path :'projects', component: ProjectsComponent,
-    }
+    },
+    { 
+      path: 'users', component:UsermanagementComponent, 
+    },
 ];
 
 @NgModule({
