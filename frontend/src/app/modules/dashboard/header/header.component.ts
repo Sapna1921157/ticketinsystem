@@ -37,6 +37,18 @@ userType: any;
   // signout() {
   //   this.route.navigate(['/login'])
   // }
+  ngOnInit(): void {
+
+    this.userType = this.loginService.getUser().role;
+    let currentUrl = this.router.url.split('/')
+    let lengthOfUrl = this.router.url.split('/').length
+
+    this.currentComponent = currentUrl[lengthOfUrl - 1]
+    this.getName();
+  }
+
+
+
   getName() {
     this.username = this.loginService.getUser().name;
     // console.log('ss',this.username);

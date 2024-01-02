@@ -14,8 +14,9 @@ const routes: Routes = [
      path :'projects', component: ProjectsComponent,
     },
     { 
-      path: 'users', component:UsermanagementComponent, 
+      path: 'usermanagement', component:UsermanagementComponent, 
     },
+
 ];
 
 @NgModule({
