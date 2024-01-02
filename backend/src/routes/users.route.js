@@ -49,6 +49,7 @@ router.post(
   "/editUser",
   auth.verifyToken,
   roleMiddleware.checkForbiddenRoles(["user"]),
+  roleMiddleware.checkForbiddenRoles(["admin"]),
   usersController.editUser
 );
 
@@ -57,6 +58,7 @@ router.post(
   "/deleteUser",
   auth.verifyToken,
   roleMiddleware.checkForbiddenRoles(["user"]),
+  roleMiddleware.checkForbiddenRoles(["admin"]),
   usersController.deleteUser
 );
 
