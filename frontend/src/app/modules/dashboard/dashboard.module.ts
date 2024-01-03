@@ -14,6 +14,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NcccSensorNodeComponent } from './nccc-sensor-node/nccc-sensor-node.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     
     // FooterComponent
     
+    // ProjectsComponent,
+    NcccSensorNodeComponent
+   
   ],
   imports: [
     CommonModule,

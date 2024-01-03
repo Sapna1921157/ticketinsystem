@@ -1,16 +1,41 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-@Component({
+@Component
+(
+  {
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
-})
-export class ProjectsComponent {
-    constructor(private router:Router){
+  }
+)
+export class ProjectsComponent 
+{
+  currentComponent: any;
+    constructor(private router:Router)
+    {
   
     }
-    navgation(link:any){
+    navigation(link:any)
+    {
       this.router.navigate([`/${link}`])
     }
+    selectedtab = 1;
+    Tab1(){
+      this.selectedtab = 1;
+    }
+    Tab2()
+    {
+      this.selectedtab = 2;
+
+      
+    }
+    Tab3()
+    {
+      this.selectedtab = 3;
+
+      
+    }
+
+  
 }
