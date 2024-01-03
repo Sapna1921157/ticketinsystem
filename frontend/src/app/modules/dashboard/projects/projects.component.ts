@@ -11,19 +11,31 @@ import { Router } from '@angular/router';
 )
 export class ProjectsComponent 
 {
+  currentComponent: any;
     constructor(private router:Router)
     {
   
     }
-    navgation(link:any)
+    navigation(link:any)
     {
       this.router.navigate([`/${link}`])
     }
+    selectedtab = 1;
+    Tab1(){
+      this.selectedtab = 1;
+    }
+    Tab2()
+    {
+      this.selectedtab = 2;
 
-  activeLink: string | null = null;
+      
+    }
+    Tab3()
+    {
+      this.selectedtab = 3;
 
-  navigate(link: string) {
-    this.activeLink = link;
-    this.router.navigate([`/${link}`]);
-  }
+      
+    }
+
+  
 }

@@ -4,16 +4,16 @@ import { ProjectsComponent } from './projects/projects.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashbordComponent } from './dashboard.component';
 import { HeaderModule } from './header/header.module';
-// import { HeaderComponent } from './header/header.component';
-// import { FooterComponent } from 'src/app/footer/footer.component';
+import { NcccSensorNodeComponent } from './nccc-sensor-node/nccc-sensor-node.component';
+
 
 
 @NgModule({
   declarations: [
     DashbordComponent,
-    ProjectsComponent
-    // FooterComponent
-    // HeaderComponent
+    ProjectsComponent,
+    NcccSensorNodeComponent
+   
   ],
   imports: [
     CommonModule,

@@ -1,28 +1,39 @@
 <app-header></app-header>
   <div class="tab-menu">
     <div class="tab-buttons">
-        <button class="tab-button" (click)="navigate('Projects')" *ngIf="activeLink !== 'Projects'">Projects</button>
-        <button class="tab-button" (click)="navigate('Activity')" *ngIf="activeLink !== 'Activity'">Activity</button>
-        <button class="tab-button" (click)="navigate('Issues')" *ngIf="activeLink !== 'Issues'">Issues</button>
+        <button class="tab-button" (click)="Tab1()">Projects</button>
+        <button class="tab-button" (click)="Tab2()">Activity</button>
+        <button class="tab-button" (click)="Tab3()">Issues</button>
       	<hr style="background-color: white;">
     </div>
   </div>
 
 <!--Projectstabclick-->
-<div *ngIf="activeLink === 'Projects'">
+<div *ngIf="selectedtab === 1">
+  <div class="div1">
+    <h1>Projects</h1>
+    <a class="nav-link active"  role="button" href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+      [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')" class="right">
+      <i class="fas fa-rocket" style=" color: #fdb927;padding: 2px;"   aria-hidden="true" ></i> <i>View closed projects</i></a>
+      <a href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+      [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')" class="right2">
+      <i class="fas fa-plus"style=" color: #fdb927;padding: 2px;"   aria-hidden="true" ></i> <i>New project</i></a>  </div>
+  <div class="container"><a href="/dashboard/nccc-sensor-node" class="NCCC">
+    <small><b>NCCC - Sensor Nodes</b></small></a><br>
+      <p style="font-size: 10px; color: white;"><small>The project <strong>"Nationalwide Rollout of Honeypot Threat Capturing Sensors"</strong> Ticketing System is implemented to track the <strong>DOWN</strong> status of Sensor Nodes.
+      Tickets will be raised the Node Status tracker of the nodes which are down for more than 12 hours.
+      in case the node gets UP in due time before assigning to the analyst, the status will be changed automatically to <strong>CLOSED</strong> and Ticket will be marked as <strong>CLOSED</strong>.</small></p></div>
+    </div>
+  
+    
 
-  <h1 style="font-size: 30px; color: white; margin: 20px;">Projects</h1>
-    <div class="container"><a href="@"><small><b>NCCC - Sensor Nodes</b></small></a><br>
-    <p style="font-size: 10px; color: white;"><small>The project <strong>"Nationalwide Rollout of Honeypot Threat Capturing Sensors"</strong> Ticketing System is implemented to track the <strong>DOWN</strong> status of Sensor Nodes.
-    Tickets will be raised the Node Status tracker of the nodes which are down for more than 12 hours.
-    in case the node gets UP in due time before assigning to the analyst, the status will be changed automatically to <strong>CLOSED</strong> and Ticket will be marked as <strong>CLOSED</strong>.</small></p></div>
-</div>
 <!--Activitytabclick-->
-<div *ngIf="activeLink === 'Activity'">
+<div *ngIf="selectedtab === 2">
   <p>   hello this is second tab </p>
+  
 </div>
 <!--Issuestabclick-->
-<div *ngIf="activeLink === 'Issues'">
+<div *ngIf="selectedtab === 3">
   helloo
 </div> 
 

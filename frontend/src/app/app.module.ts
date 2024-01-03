@@ -28,6 +28,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { FooterComponent } from './footer/footer.component';
 
+
 //import { MatErrorMo } from '@angular/material/input';//
 
 @NgModule({
@@ -38,6 +39,7 @@ import { FooterComponent } from './footer/footer.component';
     ForgetPasswordComponent,
     RecoverPasswordComponent,
     FooterComponent,
+
     
     // DashboardComponent
   ],

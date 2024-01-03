@@ -32,7 +32,48 @@
     border: 1px solid #fdb927;
     color: #fdb927;
 }
-a{
+a
+{
     text-decoration: none;
     color: blue;
+}
+.div1 
+{
+    display: flex;
+    
+}
+h1
+{
+    font-size: 30px;
+    color: white; 
+    margin: 20px;
+}
+.right
+{
+    margin-left: 1100px;
+    margin-top: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+.right2
+{
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+.right2 :hover
+{
+    color: #fdb927;
+}
+.right :hover
+{
+    color: #fdb927;
+
+}
+
+.fas fa-rocket{
+    background-color: #fdb927;
 }
