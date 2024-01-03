@@ -13,7 +13,11 @@ const routes: Routes = [
  
    {
     path :'projects', component: ProjectsComponent
-   }
+   },
+
+  {
+    path:'usermanagement', component: UsermanagementComponent
+  },
 ];
 
 @NgModule({
