@@ -1,12 +1,22 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const bodyparser = require('body-parser');
+const bodyParser = require('body-parser');
 
 const dotenv = require("dotenv");
 dotenv.config("./.env")
 
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+// parser request data content type application/json
+app.use(bodyParser.json());
+
+
+
 const userRouter = require('./src/routes/users.route.js');
+
 
 app.use(cors({
     origin: ["http://localhost:4200"]
@@ -17,6 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
+
 
 // create users routes
 app.use('/api/v1/users', userRouter);

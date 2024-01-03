@@ -1,0 +1,116 @@
+::ng-deep.label-sec{
+    margin-top: auto;
+    margin-bottom: auto;
+    float: left;
+    font-size: 16px;
+    font-weight: 500;
+    margin-left: 10px;
+  }
+  .float-right{
+    align-items: end;
+    float: right;
+    color: red;
+  }
+  .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::ng-deep.mat-typography h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    font-family: Roboto, sans-serif;
+    letter-spacing: .009375em;
+    margin: 0 0 16px;
+    background-color: #181F32;
+  }
+  ::ng-deep.mdc-text-field--filled:not(.mdc-text-field--disabled){
+    background-color: #181F32 !important;
+    color: white !important;
+  }
+  input,select{
+    padding: 6px;
+    width: 100%;
+  .error{
+    color: red;
+  }
+  .form-sec{
+    display: flex;
+    text-align: left;
+  }
+  .form-label{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  }
+  .ciri{
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .sele2{
+    background-color: #0a0d16 !important
+  }
+  .bt{
+    width:100px;
+    
+  }
+  ::ng-deep .sele1 .mat-form-field-flex {
+    background-color: white;
+    height:35px;
+    width: 100%;
+  
+  }
+  ::ng-deep .sele1 {
+    width:100%; border-radius: 0px; margin: 10px;
+  }
+  ::ng-deep .redd{
+    color: #969696 !important;
+  }
+  ::ng-deep .sele1 .mat-select-min-line{
+    color: darkmagenta !important;
+  }
+  ::ng-deep .mat-form-field-infix{
+    margin-top: -7px;
+  }
+  .select-all{
+    margin: 5px 17px;
+  }
+  
+  mat-checkbox{
+    color:black
+  }
+  ::ng-deep {
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    border-radius:0px;
+    padding: 0.75em 0.75em 0 0.75em;
+  }
+  }
+  ::ng-deep.mdc-text-field--no-label:not(.mdc-text-field--textarea) .mat-mdc-form-field-input-control.mdc-text-field__input, .mat-mdc-text-field-wrapper .mat-mdc-form-field-input-control {
+    height: auto !important;
+    color: white !important;
+  }
+  ::ng-deep.mat-dialog-container{
+    width: 1200px !important;
+     
+      input,select{
+        width: 100% !important;
+        margin: 10px;
+        padding: 10px;
+      }
+  }
+  ::ng-deep.mat-dialog-container select {
+  margin: 0px !important;
+  width: 100% !important;
+  }
+  
+  .multiselct{
+    background-color: white;
+    color: #969696;
+    height:35px;
+    width: 100%;
+    margin-top: 20px;
+  }

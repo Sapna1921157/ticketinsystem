@@ -11,9 +11,9 @@ nav
   margin: auto;
   margin-right: 10px;
 }
-  .nav-item-active{
-    text-shadow:0 0px 5px cyan , 0 0px 10px goldenrod;
-  }
+  // .nav-item-active{
+  //   text-shadow:0 0px 5px cyan , 0 0px 10px goldenrod;
+  // }
 .nav1{
   height:70px;
   font-size: 16px;
@@ -123,9 +123,9 @@ color: #DAA520;
 margin: auto;
 margin-right: 10px;
 }
-.nav-item-active{
-  text-shadow:0 0px 5px cyan , 0 0px 10px goldenrod;
-}
+// .nav-item-active{
+//   text-shadow:0 0px 5px cyan , 0 0px 10px goldenrod;
+// }
 .dropdown-menu{
   background-color: #0a0d16;
 color: white;
@@ -179,8 +179,18 @@ color:#DAA520;
 .right
 {
   display: flex;
-  margin-left: 360px;
+  margin-left: 300px;
   list-style-type: none;
 
 }
 
+.search{
+  height: 30px;
+  width: 150px;
+}
+
+#search1{
+  position: relative;
+  left: 150px;
+  color: white;
+}

@@ -46,31 +46,50 @@
             padding: 2px;" aria-hidden="true"></i> Help
         </a>
         </li>
-        <ul class="right">
-          <li class="nav-item ">
-            <a class="nav-link active"  role="button" data-toggle="dropdown"
-              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
-              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
-              Login in as admin                          
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link active"  role="button" data-toggle="dropdown"
-              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
-              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
-              My Account
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link active"  role="button" data-toggle="dropdown"
-              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
-              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
-              Sign Out
-            </a>
-          </li>
+        <ul id="search1">
+          <label name="search">Search : </label>
+          <input type="search" class="search">
+          <input list="search" placeholder="Jump to a Project" class="search" />
+          <datalist id="search">
+             
+              </datalist>
         </ul>
         
       </ul>
+      <ul class="navbar-nav mr-right">
+        <li class="nav-item active">
+
+        </li>
+        <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle active" id="navbarDropdown" role="button" data-toggle="dropdown"
+                [ngClass]="{'nav-item-active': ((currentComponent  == 'usermanagement')  || (currentComponent  == 'profile') )}"
+                aria-haspopup="true" aria-expanded="false" 
+                style="color: #fdb927;">
+                {{ username }}
+
+            </a> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" [ngClass]="{'nav-item-active': currentComponent  == 'profile'}"
+                    (click)="profile()"><i class="fa fa-user icon-col"></i>&nbsp; Profile</a>
+                <div *ngIf="userType != 'user' " class="dropdown-divider"></div>
+                <a *ngIf="userType != 'user' " class="dropdown-item"
+                    [ngClass]="{'nav-item-active': currentComponent  == 'usermanagement'}"
+                    (click)="navigation('usermanagement')" href="dashboard/usermanagement"><i
+                        class="fa fa-users icon-col"></i>&nbsp; Users</a>
+
+                <div *ngIf="userType != 'user' " class="dropdown-divider"></div>
+
+                <a class="dropdown-item" (click)="changePassword()"><i class="fa fa-unlock-alt icon-col"></i>&nbsp;
+                    Change
+                    Password</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out icon-col"></i>&nbsp; Logout</a>
+
+            </div>
+        </li>
+    </ul>
+
+
    
   
 

@@ -10,6 +10,13 @@ const dbConn = mysql.createPool({
      debug    :  false
 });
 
+// dbConn.query("select * from users",[], (err, results) => {
+//   if (err) {
+//     console.error('Error executing query:', err);
+//     return;
+//   }
 
+//   console.log('Query results:', results);
+// });
 module.exports = dbConn;
 

@@ -1,0 +1,92 @@
+<!-- <div class="profile-div"> 
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      
+      <i class="fa fa-user colo"></i><input matInput formControlName="name" required>
+    </mat-form-field> <br>
+                                                            
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required>
+    </mat-form-field><br>
+  
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </form>
+  </div>
+   -->
+
+
+   <div class="profile-div">
+    <form [formGroup]="profileForm">
+        <h2 class="panel-title">
+          <div class="float-right" (click)="closeButton('simple')" style="color: red;">
+            <i class="fa fa-close"></i>
+          </div>
+          <div>
+            <label><i class="fa fa-user colo"></i>&nbsp;Full Name:</label><b><br><br>
+              <input class="inp1" type="text" matInput
+                formControlName="name"></b><span class="error" *ngIf="f.errors">&nbsp;Full Name is Required</span>
+          </div>
+        </h2>
+        <hr color="grey">
+    
+        <!-- <tr>
+                    <td class="colo">Username</td>
+                    <td>:</td>
+                    <td>&nbsp;&nbsp;&nbsp;{{username}}</td>
+                   <td><input class="inp1" type="text" matInput formControlName="usernamep"></td> 
+                </tr> -->
+        <tr>
+          <td class="colo">
+            <h2><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Email</h2>
+          </td>
+          <td>:</td>
+          <td><input class="inp1" type="email" matInput formControlName="email"><span class="error"
+              *ngIf="fe?.errors">&nbsp;Invalid Email Pattern</span></td>
+    
+        </tr>
+        <!-- <tr>
+                    <td class="colo">Role</td>
+                    <td>:</td>
+                    <td>&nbsp;&nbsp;&nbsp;{{role}}</td>
+                </tr> -->
+    
+        <!-- <tr *ngIf="this.allNodes[this.allNodes?.length-1]?.id == 0 ">
+                    <td class="colo">Nodes Assigned</td>
+                    <td>:</td>
+                    <td>&nbsp;&nbsp;&nbsp;All </td>
+                </tr> -->
+        <!-- <tr *ngIf="allNodes[this.allNodes?.length-1]?.id != 0">
+                    <td class="colo">Nodes Assigned</td>
+                    <td>:</td>
+                    <td> <span *ngFor="let node of allNodes;let i = index;">{{node.id}} <span
+                                *ngIf="i != allNodes.length-1">,</span></span> </td>
+                </tr> -->
+        <!-- <tr>
+                    <td class="colo">Region Assigned</td>
+                    <td>:</td>
+                    <td> <span *ngFor="let reg of region.data;let i = index;">{{reg.key}} <span
+                                *ngIf="i != region.data.length-1">,</span></span> </td>
+                </tr> -->
+        <!-- <tr>
+                    <td class="colo">Sector Assigned</td>
+                    <td>:</td>
+                    <td> <span *ngFor="let sec of sector.data;let i = index;">{{sec.key}} <span
+                                *ngIf="i != sector.data.length-1">,</span></span> </td>
+                </tr> -->
+        <!-- <tr>
+                    <td class="colo vt">Organization Assigned</td>
+                    <td class="vt">:</td>
+                    <td>
+                        <div class="orgni">
+                            <span *ngFor="let org of organization.data;let i = index;">{{org.key}} <span
+                                    *ngIf="i != organization.data.length-1">,</span></span>
+                        </div>
+                    </td>
+                </tr> -->
+                
+      </form>
+      <div class="center-container">
+      <button [disabled]="!profileForm.valid" class="btn btn-primary">Submit</button>
+     </div>
+    </div>

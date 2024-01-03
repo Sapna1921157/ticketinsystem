@@ -8,14 +8,14 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    // HeaderComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports:[
-    HeaderComponent
+    // HeaderComponent
   ]
 })
 export class HeaderModule { }
