@@ -123,9 +123,15 @@ color: #DAA520;
 margin: auto;
 margin-right: 10px;
 }
+<<<<<<< HEAD
 // .nav-item-active{
 //   text-shadow:0 0px 5px cyan , 0 0px 10px goldenrod;
 // }
+=======
+.nav-item-active{
+  text-shadow:0 0px 5px cyan , 0 0px 10px goldenrod;
+}
+>>>>>>> eafa06a6336da50c78ff0219159db74abfc08acf
 .dropdown-menu{
   background-color: #0a0d16;
 color: white;
@@ -179,11 +185,16 @@ color:#DAA520;
 .right
 {
   display: flex;
+<<<<<<< HEAD
   margin-left: 300px;
+=======
+  margin-left: 360px;
+>>>>>>> eafa06a6336da50c78ff0219159db74abfc08acf
   list-style-type: none;
 
 }
 
+<<<<<<< HEAD
 .search{
   height: 30px;
   width: 150px;
@@ -194,3 +205,5 @@ color:#DAA520;
   left: 150px;
   color: white;
 }
+=======
+>>>>>>> eafa06a6336da50c78ff0219159db74abfc08acf

@@ -13,7 +13,10 @@
         <li class="nav-item">
             <a class="nav-link active" role="button" data-toggle="dropdown" href="/dashboard" aria-haspopup="true"
               aria-expanded="false" [ngClass]="{'nav-item-active': (( currentComponent  === 'dashboard') )}"
+<<<<<<< HEAD
               (click)="navigation('')">
+=======
+>>>>>>> eafa06a6336da50c78ff0219159db74abfc08acf
               <i class="fas fa-home " style="padding:2px; color: #fdb927 " aria-hidden="true" ></i>Home
             </a>
         </li>
@@ -46,6 +49,7 @@
             padding: 2px;" aria-hidden="true"></i> Help
         </a>
         </li>
+<<<<<<< HEAD
         <ul id="search1">
           <label name="search">Search : </label>
           <input type="search" class="search">
@@ -93,6 +97,36 @@
    
   
 
+=======
+        <ul class="right">
+          <li class="nav-item ">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              Login in as admin                          
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              My Account
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              Sign Out
+            </a>
+          </li>
+        </ul>
+        
+      </ul>
+   
+  
+
+>>>>>>> eafa06a6336da50c78ff0219159db74abfc08acf
 <!-- Logout Button
 <p style=" color:white !important; margin-right:-20px;padding-right:10px; margin-top:5px; border-right: 2px solid #002245;">
     <strong ><a routerLink="/jibran">jibran</a></strong>
@@ -105,3 +139,7 @@
       </ul>
     </div> -->
    
+
+
+   
+    
