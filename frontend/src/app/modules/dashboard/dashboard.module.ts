@@ -5,6 +5,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashbordComponent } from './dashboard.component';
 import { HeaderModule } from './header/header.module';
 import { NcccSensorNodeComponent } from './nccc-sensor-node/nccc-sensor-node.component';
+import { AddNewProjectComponent } from './add-new-project/add-new-project.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
@@ -12,13 +14,18 @@ import { NcccSensorNodeComponent } from './nccc-sensor-node/nccc-sensor-node.com
   declarations: [
     DashbordComponent,
     ProjectsComponent,
-    NcccSensorNodeComponent
+    NcccSensorNodeComponent,
+    AddNewProjectComponent,
    
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     HeaderModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
-export class DashboardModule { }
+export class DashboardModule { 
+
+}
