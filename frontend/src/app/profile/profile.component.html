@@ -19,11 +19,12 @@
    <div class="profile-div">
     <form [formGroup]="profileForm">
         <h2 class="panel-title">
-          <div class="float-right" (click)="closeButton('simple')">
+          <div class="float-right" (click)="closeButton('simple')" style="color: red;">
             <i class="fa fa-close"></i>
           </div>
           <div>
-            <label><i class="fa fa-user colo"></i>&nbsp;Full Name:</label><b><input class="inp1" type="text" matInput
+            <label><i class="fa fa-user colo"></i>&nbsp;Full Name:</label><b><br><br>
+              <input class="inp1" type="text" matInput
                 formControlName="name"></b><span class="error" *ngIf="f.errors">&nbsp;Full Name is Required</span>
           </div>
         </h2>

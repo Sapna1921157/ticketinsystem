@@ -5,8 +5,8 @@
 }
 .tab-menu 
 {
-    background-color: #0c0e16;
-    padding-top: 10px;
+    background-color: #0a0d16 ;
+        padding-top: 10px;
 }
 
 
@@ -16,12 +16,64 @@
     cursor: pointer;
     color:#ffff;
     font-size: 12px;
-    background-color: #0c0e16;
-    transition: border 0.3s ease-in-out;
+    background-color: #0a0d16;    transition: border 0.3s ease-in-out;
+}
+.container
+{
+    max-width: 400px;
+    height: auto;
+    margin: 20px;
+    
+    padding: 10px;
+    box-shadow: 0px 0px 0px 1px white;
 }
 
 .tab-button:hover {
     border: 1px solid #fdb927;
     color: #fdb927;
 }
+a
+{
+    text-decoration: none;
+    color: blue;
+}
+.div1 
+{
+    display: flex;
+    
+}
+h1
+{
+    font-size: 30px;
+    color: white; 
+    margin: 20px;
+}
+.right
+{
+    margin-left: 1100px;
+    margin-top: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+.right2
+{
+    margin-left: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+.right2 :hover
+{
+    color: #fdb927;
+}
+.right :hover
+{
+    color: #fdb927;
 
+}
+
+.fas fa-rocket{
+    background-color: #fdb927;
+}

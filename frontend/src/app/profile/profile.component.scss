@@ -52,11 +52,11 @@
  
 }
 table td{
-    font-size: larger;
+    font-size: normal;
     padding: 10px;
 }
 table th{
-    font-size: larger;
+    font-size: normal;
     padding: 10px;
 }
 .mat-dialog-container{
@@ -78,6 +78,7 @@ input{
     border-bottom: 0.5px solid darkgray !important;
     background-color: transparent !important;
     width: 250px;
+    height: 50px;
 
 }
 // input[type="text"] {
@@ -108,4 +109,8 @@ input:hover{
   .btn {
     color: black;
     background-color: #fdb927;
+}
+
+.inp1{
+  height: 40px;
 }
