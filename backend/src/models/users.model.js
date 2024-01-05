@@ -331,7 +331,7 @@ async function fetchcapchaStatus(capcha_res, user_ip) {
 // login user
 
 Users.loginUser = async (req, result) => {
-    // console.log(req.body);
+
     let getCapstatus = await fetchcapchaStatus(req.body.capcha_token, req.body.ip);
     if (getCapstatus.data.success != true) {
         return result({
@@ -471,6 +471,7 @@ Users.loginUser = async (req, result) => {
     }
 }
 
+
 function otpDestroy(user_id) {
     dbConn.query(`UPDATE users SET otp = NULL WHERE user_id = '${user_id}'`)
 }
@@ -600,6 +601,43 @@ Users.logOut = async (req, result) => {
         }, null)
     }
 }
+
+//-----------------------------------------------------------
+//newProject
+Users.newProject = (req, result) => {
+    try {
+        const {
+            Name,
+            Description,
+            is_public,
+
+        } = req.body
+
+        dbConn.query(` insert into projects ( name, description, is_public, status ) values (
+            '${Name}',
+            '${Description}',
+            '${is_public}',
+            '1'
+        )`, (err, res) => {
+            console.log(err)
+            // console.log(err)
+            // console.log(res)
+            return result(null, {
+                status: 1,
+                data: res,
+                message: "Data inserted successfully"
+            });
+        })
+    } catch (err) {
+        console.log(err);
+        return result(null, {
+            status: 0,
+            message: "Something went wrong!! Try Again"
+        });
+    }
+}
+
+
 
 
 module.exports = Users;

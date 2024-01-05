@@ -62,5 +62,13 @@ router.post(
   usersController.deleteUser
 );
 
+//new project
+router.post(
+  "/newProject",
+  // auth.verifyToken,
+  usersController.newProject
+
+  )
+
 
 module.exports = router;
