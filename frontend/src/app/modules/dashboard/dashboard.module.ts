@@ -15,7 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { NcccSensorNodeComponent } from './nccc-sensor-node/nccc-sensor-node.component';
 import { AddNewProjectComponent } from './add-new-project/add-new-project.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -44,8 +44,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatSortModule,
     MatFormFieldModule,
     MatSelectModule,
-    ReactiveFormsModule,
-    
+    FormsModule,
+        ReactiveFormsModule
 
   ]
 })

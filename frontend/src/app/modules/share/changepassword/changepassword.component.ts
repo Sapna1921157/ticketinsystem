@@ -7,7 +7,7 @@ import { RestService } from 'src/app/core/rest.service';
 import { environment } from 'src/environments/environment';
 import { AESEncryptDecryptService } from 'src/app/common/aesencrypt-decrypt.service';
 import { minLengthAsyncValidator } from 'src/app/common/validator';
-
+ 
 @Component({
   selector: 'app-changepassword',
   templateUrl: './changepassword.component.html',
