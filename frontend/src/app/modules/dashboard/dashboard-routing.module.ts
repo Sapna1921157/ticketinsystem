@@ -23,6 +23,8 @@ const routes: Routes = [
   {
     path: 'Administration', component:AdministrationComponent
   },
+
+  
 ];
 
 @NgModule({

@@ -8,6 +8,7 @@ import { RestService } from 'src/app/core/rest.service';
 import { environment } from 'src/environments/environment';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+
 @Component({
   selector: 'app-administration',
   templateUrl: './administration.component.html',

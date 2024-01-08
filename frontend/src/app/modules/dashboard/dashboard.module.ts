@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects/projects.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -16,7 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NcccSensorNodeComponent } from './nccc-sensor-node/nccc-sensor-node.component';
 import { AdministrationComponent } from './administration/administration.component';
-
+import { ProjectComponent } from './project/project.component';
 
 
 @NgModule({
@@ -29,9 +29,10 @@ import { AdministrationComponent } from './administration/administration.compone
     
     // FooterComponent
     
-    // ProjectsComponent,
+    
     NcccSensorNodeComponent,
-          AdministrationComponent
+    AdministrationComponent,
+    ProjectComponent
    
   ],
   imports: [
@@ -46,6 +47,8 @@ import { AdministrationComponent } from './administration/administration.compone
     ReactiveFormsModule,
     
 
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class DashboardModule { }
