@@ -4,8 +4,9 @@ import { DashbordComponent } from './dashboard.component';
 import { LoginComponent } from 'src/app/login/login.component';
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
 import { ProjectsComponent } from './projects/projects.component';
-import { NcccSensorNodeComponent } from './nccc-sensor-node/nccc-sensor-node.component';
 import { AddNewProjectComponent } from './add-new-project/add-new-project.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { UsersComponent } from './users/users.component';
 
 
 const routes: Routes = 
@@ -27,6 +28,11 @@ const routes: Routes =
   {
     path:'usermanagement', component: UsermanagementComponent
   },
+  {
+    path:'users', component: UsersComponent
+  },
+  
+  
 ];
 
 @NgModule({
