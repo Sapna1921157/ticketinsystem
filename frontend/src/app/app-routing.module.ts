@@ -19,6 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule),
     canActivate: [AuthGuard]
   },
+ 
   { path: 'signup', component: SignupComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
 

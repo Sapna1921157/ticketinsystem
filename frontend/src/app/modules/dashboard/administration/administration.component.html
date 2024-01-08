@@ -1,0 +1,100 @@
+<app-header></app-header>
+<div>
+    <h3>Administration</h3>
+    <ul class="navbar">
+        <li class="nav-item">
+            <a class="nav-link active" role="button" data-toggle="dropdown" href="dashboard/project" aria-haspopup="true"
+              aria-expanded="false" [ngClass]="{'nav-item-active': (( currentComponent  === 'project') )}"
+              (click)="navigation('project')">
+              <i class="fas fa-project-diagram " style="padding:2px; color: #fdb927 " aria-hidden="true" ></i>
+              Projects
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="administration/users" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'administration/users') )}" (click)="navigation('administration/users')">
+              <i class="fa fa-user" style="padding:2px; color: #ebb239;" aria-hidden="true" ></i> Users
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-group" style="padding:2px; color: #fdb927;" aria-hidden="true" ></i> Groups
+            </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active"  role="button" data-toggle="dropdown"
+            href="/dashboard/Administration" aria-haspopup="true" aria-expanded="false"
+            [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('Administration')">
+            <i class="fas fa-id-card" style=" color: #fdb927;padding: 2px;"   aria-hidden="true" ></i> 
+            Roles & Permissions
+          </a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link active"  role="button" data-toggle="dropdown"
+            href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+            [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+            <i class="fas fa-chart-line" style="color: #fdb927;
+            padding: 2px;" aria-hidden="true"></i>Trackers
+        </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-exclamation-circle" style="color: #fdb927;
+              padding: 2px;" aria-hidden="true"></i>Issue Status
+          </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-tasks" style="color: #fdb927;
+              padding: 2px;" aria-hidden="true"></i>Workflow
+          </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-sliders-h" style="color: #fdb927;
+              padding: 2px;" aria-hidden="true"></i>Custom Fields
+          </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-list-ol" style="color: #fdb927;
+              padding: 2px;" aria-hidden="true"></i>Enumerations
+          </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-cogs" style="color: #fdb927;
+              padding: 2px;" aria-hidden="true"></i>Settings
+          </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-puzzle-piece" style="color: #fdb927;
+              padding: 2px;" aria-hidden="true"></i>Plugins
+          </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"  role="button" data-toggle="dropdown"
+              href="/dashboard/projects" aria-haspopup="true" aria-expanded="false"
+              [ngClass]="{'nav-item-active': (( currentComponent  === 'projects') )}" (click)="navigation('projects')">
+              <i class="fas fa-info-circle" style="color: #fdb927;
+              padding: 2px;" aria-hidden="true"></i>Information
+          </a>
+          </li>
+     </ul>
+</div>

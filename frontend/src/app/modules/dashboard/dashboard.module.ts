@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectsComponent } from './projects/projects.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
@@ -14,10 +14,15 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { NcccSensorNodeComponent } from './nccc-sensor-node/nccc-sensor-node.component';
+<<<<<<< HEAD
 import { AddNewProjectComponent } from './add-new-project/add-new-project.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
 
+=======
+import { AdministrationComponent } from './administration/administration.component';
+import { ProjectComponent } from './project/project.component';
+>>>>>>> adb47d1c19e43d7bd04954d3c7d13f811a60faae
 
 
 @NgModule({
@@ -32,9 +37,16 @@ import { UsersComponent } from './users/users.component';
     
     // FooterComponent
     
+<<<<<<< HEAD
     // ProjectsComponent,
     NcccSensorNodeComponent,
           UsersComponent,
+=======
+    
+    NcccSensorNodeComponent,
+    AdministrationComponent,
+    ProjectComponent
+>>>>>>> adb47d1c19e43d7bd04954d3c7d13f811a60faae
    
   ],
   imports: [
@@ -49,7 +61,9 @@ import { UsersComponent } from './users/users.component';
     FormsModule,
         ReactiveFormsModule
 
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class DashboardModule { 
 
