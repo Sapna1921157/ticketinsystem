@@ -5,6 +5,7 @@ import { LoginComponent } from 'src/app/login/login.component';
 import { UsermanagementComponent } from './usermanagement/usermanagement.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { ProjectComponent } from './project/project.component';
 
 const routes: Routes = [
   
@@ -23,7 +24,10 @@ const routes: Routes = [
   {
     path: 'Administration', component:AdministrationComponent
   },
-
+ 
+  {
+    path: 'project', component: ProjectComponent
+  }
   
 ];
 
