@@ -2,15 +2,69 @@
  <app-header></app-header>
  
 <div class="row">
-    <div class="col-9" >
+    <div class="col-9">
         <h3>Projects</h3>
       <form action="">
-        <fieldset>
-            <legend>Name and Location</legend>
-        <input type="text" name="" id="">
+        <fieldset class="border p-2">
+          <legend  class="w-auto">Filters:</legend><br> 
+            <label for="">Status:</label>
+            <select name="Status" id="">
+            <option value="">Active</option>
+            <option value="">Deactivate</option>
+            <option value="None">None</option>
+                    </select>
+                    <label for="">Project:</label>
+                    <input type="text">
+                    <input type="submit" name="" class="button">
+                    <input type="reset" value="Clear" class="button">
+                    
     </fieldset>
       </form>
+      <div class="box-body table-responsive no-padding">
+        <mat-paginator #paginator="matPaginator" [pageSizeOptions]="[5, 10, 25, 50,100]"
+    aria-label="Select page of users">
+</mat-paginator>
+
+<table mat-table [dataSource]="dataSource" class="table">
+    <ng-container matColumnDef="vm_id">
+        <th mat-header-cell *matHeaderCellDef class="tab-header">Project</th>
+        <td mat-cell *matCellDef="let row;">{{ row.vm_id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="vm_name">
+        <th mat-header-cell *matHeaderCellDef class="tab-header">Public</th>
+        <td mat-cell *matCellDef="let row">{{ row.vm_name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="browser_id">
+        <th mat-header-cell *matHeaderCellDef class="tab-header">Created</th>
+        <td mat-cell *matCellDef="let row">{{row.browser_name}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row;"><button (click)="deleteProfile(row.vm_id)"
+            class="btn btn-sm btn-primary-del">Delete</button></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+    <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="9">No data found</td>
+    </tr>
+
+</table>                            
     </div>
+      
+    </div>
+
+
+
+
+      <!-- administration tag -->
     <div class="col-3 administration">
 
         <h3>Administration</h3>

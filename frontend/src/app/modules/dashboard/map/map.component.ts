@@ -8,7 +8,7 @@ import * as mapboxgl from 'mapbox-gl';
 })
 export class MapComponent  implements OnInit {
   map!: mapboxgl.Map;
-  style = 'mapbox://styles/mapbox/streets-v11';
+  style = 'mapbox://styles/mapbox/satellite-v9';
 
   lat = 20.5937;
   lng = 78.9629;

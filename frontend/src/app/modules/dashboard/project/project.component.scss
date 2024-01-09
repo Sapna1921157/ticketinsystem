@@ -1,3 +1,4 @@
+
 h3{
     color: white;
 }
@@ -8,12 +9,13 @@ h3{
 
 form{
     color: white;
+    // border: 2px solid white;
 
 }
 
-fieldset{
-    border: 3px solid white;
-}
+// fieldset{
+//     border: 3px solid white;
+// }
 
 .administration{
     background-color: #0f1b40;
@@ -23,3 +25,157 @@ fieldset{
 ul{
     list-style-type: none
 }
+
+select{
+    margin-right: 6px;
+}
+
+input {
+    width: 270px;
+    height: 30px;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+
+.button{
+    background-color: #0f1b40;
+    width: 90px;
+    height: 40px;
+    border: 1px solid #fdb927;
+}
+
+// usermanagement copied
+
+.main-heading {
+    text-align: center;
+    color: #fdb927;
+    font-size: x-large;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .table td,
+  th {
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 200px;
+  }
+  
+  .table th {
+    color: #fdb927;
+    background-color: black;
+    border: none;
+    padding: 10px;
+    vertical-align: middle;
+  }
+  
+  i {
+    color: #fdb927;
+  }
+  
+  .table td {
+    vertical-align: middle;
+    color: white;
+    background-color: #181F32;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid grey;
+  
+  }
+  
+  .box {
+    position: relative;
+    background: transparent;
+    border-top: 2px solid #c1c1c1;
+    margin-bottom: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 100%;
+    box-shadow: 0px 15px 13px rgb(1 77 167 / 10%);
+    ;
+  }
+  
+  .box.box-primary {
+    padding: 20px;
+    border-top-color: #3c8dbc;
+  }
+  
+  .box .box-header {
+    text-align: center;
+    position: relative;
+    -webkit-border-top-left-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -moz-border-radius-topleft: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom: 0px solid #f4f4f4;
+    color: #fdb927;
+    padding-bottom: 10px;
+  }
+  
+  .box .box-header:before,
+  .box .box-header:after {
+    display: table;
+    content: " ";
+  }
+  
+  .width48 {
+    width: 48% !important;
+    float: left;
+    padding: 9px;
+  }
+  
+  .btn-primary {
+    float: right;
+    color: #fdb927;
+    background-color: transparent;
+    border-color: #fdb927;
+    padding: 10px 40px;
+    // background-color:#fdb927 ;
+    align-content: center;
+  }
+  
+  .btn-primary[disabled]:hover 
+  {
+    background-color: transparent;
+    color: #fdb927;
+    cursor: not-allowed;
+  }
+  
+  .btn-primary:hover {
+    float: right;
+    color: #fff;
+    background-color: transparent;
+    border-color: #fdb927;
+    padding: 10px 40px;
+    background-color: #fdb927;
+  }
+  
+  .btn-primary-del {
+    color: Red;
+    background-color: transparent;
+    border-color: red;
+    padding: 10px 40px;
+  }
+  
+  .btn-primary-del:hover {
+    // float: right;
+    color: rgb(249, 248, 248);
+    background-color: transparent;
+    border-color: red;
+    padding: 10px 40px;
+    background-color: red;
+  }
+  
+  .required{
+    // font-size: medium;
+    color:rgb(192, 1, 1);
+  }
