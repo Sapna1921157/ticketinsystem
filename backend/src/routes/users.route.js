@@ -5,6 +5,8 @@ const usersController = require('../controllers/users.controller.js');
 var { LOGIN,CREATE_USER } = require('../validator/validator.js');
 const auth = require('../../middleware/auth')
 const roleMiddleware = require("../../middleware/roleMiddleware");
+const dbConn = require('../../config/db.config.js');
+const { Result } = require('express-validator');
 
 // create user or signup
 router.post("/createUser", CREATE_USER, usersController.createUser);
@@ -62,13 +64,36 @@ router.post(
   usersController.deleteUser
 );
 
-//new project
+//add project
 router.post(
-  "/newProject",
+  "/addProject",
   // auth.verifyToken,
-  usersController.newProject
+  usersController.addProject
+)
 
-  )
+//  get project
+//  router.get('/getProjects', (req, res) => {
+//   const sql_query = 'select * from projects';
+//   dbConn.query(sql_query, (err, result) => {
+//     if(err) throw err;
+//     console.log(err)
+//     res.send(result);
+//   })
+//  })
+router.get("/getProjectsList",
+// auth.verifyToken, 
+usersController.getProjectsList
+);
+
+// Delete user
+router.delete("/deleteProject",
+  usersController.deleteProject
+);
+
+// Update project
+router.put("/updateProject",
+  usersController.updateProject
+);
 
 
 module.exports = router;

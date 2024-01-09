@@ -274,12 +274,47 @@ exports.deleteUser = (async (req, res) => {
 })
 
 //new project
-exports.newProject= (req, res) => {
-    UserModel.newProject(req,(err, user) => {
+exports.addProject= (req, res) => {
+    UserModel.addProject(req,(err, user) => {
         if (err) {
             res.send(err)
         } else {
             console.log(user)
+            res.send(user)
+        }
+    })
+}
+
+// get projects list
+exports.getProjectsList = (req, res) => {
+    UserModel.getAllProjects((err, user) => {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(user)
+        }
+    })
+
+    
+
+}
+// get projects list
+exports.deleteProject = (req, res) => {
+    UserModel.deleteProject(req,(err, user) => {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(user)
+        }
+    })
+}
+
+// get projects list
+exports.updateProject = (req, res) => {
+    UserModel.updateProject(req,(err, user) => {
+        if (err) {
+            res.send(err)
+        } else {
             res.send(user)
         }
     })
