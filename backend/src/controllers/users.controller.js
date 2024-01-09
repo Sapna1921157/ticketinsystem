@@ -272,3 +272,15 @@ exports.deleteUser = (async (req, res) => {
         })
     }
 })
+
+//new project
+exports.newProject= (req, res) => {
+    UserModel.newProject(req,(err, user) => {
+        if (err) {
+            res.send(err)
+        } else {
+            console.log(user)
+            res.send(user)
+        }
+    })
+}
