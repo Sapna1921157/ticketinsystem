@@ -602,9 +602,9 @@ Users.logOut = async (req, result) => {
     }
 }
 
-//-----------------------------------------------------------
-//newProject
-Users.newProject = (req, result) => {
+//----------------------Project Page Section-------------------------------------
+//addProject
+Users.addProject = (req, result) => {
     try {
         const {
             Name,
@@ -637,7 +637,84 @@ Users.newProject = (req, result) => {
     }
 }
 
+//
+// get all projects
+Users.getAllProjects = (result) => {
+    try {
+        dbConn.query('SELECT * FROM projects', (err, res) => {
+            result(null, res);
+        })
+    } catch (err) {
+        return result(null, err);
+    }
+}
 
+// delete project
+Users.deleteProject = (req, result) => {
+    const id= req.body.id
+    try {
+        dbConn.query(`DELETE  FROM projects where id= ${id}`, (err, res) => {
+            
+            console.log(err)
+            console.log(res)
+
+            if (res.affectedRows === 0) {
+                // If no rows were affected (empty table or ID not found)
+                const error = {
+                    message: 'No matching project found to delete.'
+                };
+                return result(error, null);
+            }
+
+            result(null, {
+                status: 1,
+                message: "Data deleted successfully",
+                data: res
+            });
+        
+        })
+    } catch (err) {
+
+        return result(null, {
+            status: 0,
+            message: "Something went wrong!! Try Again",
+            error: err
+        });
+    }
+}
+
+//update project
+Users.updateProject = (req, result) => {
+    const {
+        name,
+        description,
+        is_public,
+        status,id
+
+    } = req.body
+    console.log("ggggg",req.body)
+    try {
+        dbConn.query(
+            `UPDATE projects SET name = ?, description = ?, is_public = ?, status = ? WHERE id = ?`,
+            [name, description, is_public, status, id],   (err, res) => {
+            console.log(err)
+            console.log(res)
+    
+            result(null, {
+                status: 1,
+                message: "Data updated successfully",
+                data: res
+            });
+        })
+    } catch (err) {
+
+        return result(null, {
+            status: 0,
+            message: "Something went wrong!! Try Again",
+            error: err
+        });
+    }
+}
 
 
 module.exports = Users;
